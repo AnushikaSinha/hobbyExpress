@@ -1,6 +1,8 @@
+import 'dotenv/config'
 import express from "express";
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+app.use(express.json());
 
 /*app.get("/", (req, res) => {
   res.send("Hello Demo Express!");
@@ -14,8 +16,6 @@ app.get("/about", (req, res) => {
   res.send("Hello ABOUT Express!");
 });
 */
-
-app.use(express.json());
 
 let hobby = [
   {
